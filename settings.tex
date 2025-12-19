@@ -1,0 +1,86 @@
+\documentclass[11pt]{article}
+\usepackage{xltxtra}
+\usepackage{bookmark}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+\usepackage{url}
+\urlstyle{tt}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{calc}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{relsize}
+\usepackage{xspace}
+\usepackage{fontawesome5}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{siunitx}
+\usepackage{amssymb}
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage{fontspec}
+\usepackage{fancybox}
+\usepackage{float}
+
+% 一些小设置
+\CJKsetecglue{}
+\protected\def\Cpp{{C\nolinebreak[4]\hspace{-.05em}\raisebox{.28ex}{\relsize{-1}++}}\xspace}
+\setlength{\parindent}{0pt}
+\pagenumbering{gobble}
+\setlist[itemize]{topsep=0em, leftmargin=*}
+\setlist[enumerate]{topsep=0em, leftmargin=*}
+
+% --- 华中科技大学配色 ---
+% 官方标准红 RGB: 193, 0, 22 (大致)
+% 为了简历阅读舒适，这里稍微调暗一点点，显得稳重
+\definecolor{HUST_Red}{RGB}{176, 31, 36} 
+% 如果你喜欢原来那种蓝色风格，也可以保留蓝色，华科理工科用深蓝也很合适
+% \definecolor{HUST_Blue}{RGB}{0, 51, 102} 
+
+% --- 标题格式设置 (使用 HUST_Red) ---
+\titleformat{\section}
+  {\LARGE\bfseries\raggedright}
+  {}{0em}
+  {}
+  [{\color{HUST_Red}\titlerule}] % 标题下划线颜色
+\titlespacing*{\section}{0cm}{*1.2}{*1.2}
+
+\titleformat{\subsection}
+  {\large\bfseries\raggedright}
+  {}{0em}
+  {}
+  []
+\titlespacing*{\subsection}{0cm}{*1.2}{*1.2}
+
+% 页面大小与页边距
+\usepackage[
+	a4paper,
+	left=1.2cm,
+	right=1.2cm,
+	top=1.8cm, % 稍微增加顶部距离以容纳页眉
+	bottom=1cm,
+	nohead
+]{geometry}
+
+\renewcommand{\arraystretch}{1.2}
+\linespread{1.2}
+\renewcommand{\CJKglue}{\hskip 0.05em}
+
+% --- 字体设置 (优化版) ---
+% 原模板使用了特定路径的字体，如果在 Overleaf 或没有该字体会报错。
+% 这里做了判断：如果能找到 SweiSpring 就用，找不到就用系统自带的。
+
+\ifxetex
+  % 尝试加载自定义字体，如果不想用自定义字体，直接注释掉下面这块
+  % \setmainfont[Path=fonts/,Extension=.ttf,BoldFont=* Bold]{SweiSpring}
+  % \setCJKmainfont[Path=fonts/,Extension=.ttf,BoldFont=* Bold]{SweiSpring}
+  
+  % --- 推荐方案：使用通用字体 (Overleaf 上可用 Fandol 系列) ---
+  % 如果你在本地 Windows，可以改为 SimSun (宋体) 和 SimHei (黑体)
+  \setCJKmainfont[BoldFont=FandolHei-Regular, ItalicFont=FandolKai-Regular]{FandolSong-Regular}
+  \setmainfont{Times New Roman} % 英文用 Times 比较正式
+\fi

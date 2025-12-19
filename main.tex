@@ -1,0 +1,156 @@
+\include{settings}
+
+% 填写个人信息
+% 学院 / 部门
+\newcommand{\school}{人工智能与自动化学院 | School of AIA} 
+
+% 联系方式
+\newcommand{\contact}{
+    \scriptsize
+    \textcolor{white}{
+        % 邮箱 (改为 hust 后缀)
+        \faEnvelope \quad \href{mailto:youremail@hust.edu.cn}{youremail@hust.edu.cn}
+        \hspace{4em}
+        % 手机号
+        \faPhone \quad  130-6666-8888
+        \hspace{4em}
+        % 微信/Github
+        \faGithub \quad \href{https://github.com/yourname}{github.com/yourname}
+    }
+}
+
+%%%%%%%%%%%%%%%%%%%%
+% 简历正文
+%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+    % ============================================================
+    % 页眉设计 (自动绘制红色背景条，无需 header.png)
+    % ============================================================
+    \begin{tikzpicture}[remember picture, overlay]
+        % 1. 画红色背景条
+        \fill[HUST_Red] (current page.north west) rectangle ([yshift=-1.6cm]current page.north east);
+        
+        % 2. 放置左侧校徽文字 Logo (请确保 images/hust_logo.png 是白字或透明底)
+        % 如果没有白字Logo，可以将下面这行注释掉，直接用文字写校名
+        \node[anchor=west] at ([xshift=1cm, yshift=-0.8cm]current page.north west){
+            \includegraphics[height=1.0cm]{images/hust_logo.pdf} 
+        };
+        
+        % (备用方案：如果没有图片Logo，用文字代替，取消下面注释)
+        % \node[anchor=west] at ([xshift=1cm, yshift=-0.8cm]current page.north west){
+        %     \color{white}\Huge\bfseries 华中科技大学
+        % };
+
+        % 3. 放置右侧学院名称
+        \node[anchor=east] at ([xshift=-1cm, yshift=-0.8cm]current page.north east){
+            \textcolor{white}{\textbf{\school}}
+        };
+    \end{tikzpicture}
+    \vspace{-2em} % 调整正文与页眉的距离
+
+    % ============================================================
+    % 页脚设计 (自动绘制红色背景条，无需 footer.png)
+    % ============================================================
+    \begin{tikzpicture}[remember picture, overlay]
+        % 画底部红色背景条
+        \fill[HUST_Red] (current page.south west) rectangle ([yshift=1.2cm]current page.south east);
+        
+        % 放置联系方式
+        \node[anchor=center] at ([yshift=0.6cm]current page.south){
+            \contact
+        };
+    \end{tikzpicture}
+
+    % ============================================================
+    % 背景水印 (华科校徽)
+    % ============================================================
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[
+            opacity=0.1,           % 透明度：建议 0.1 到 0.15 之间 (太深会干扰文字)
+            blend mode=multiply,    % 混合模式：让图片的白色背景变透明 (类似PS的正片叠底)
+            inner sep=0pt           % 去除多余边距
+        ] at(current page.center){
+            \includegraphics[width=0.6\paperwidth, keepaspectratio]{images/hust_badge.png}
+        };
+    \end{tikzpicture}
+
+    % ============================================================
+    % 个人信息板块
+    % ============================================================
+    \begin{figure}[h]
+        % 左半边：文字信息
+        \begin{minipage}{0.82\textwidth}
+            \section{\makebox[\widthof{\faAddressCard}][c]{\color{HUST_Red}{\faAddressCard}}\quad 个人信息}
+            \begin{tabularx}{\linewidth}{p{\widthof{出生日期:}}Xp{\widthof{政治面貌:}}X}
+                姓\ \ \ \ \ \ \ \ 名: & 喻家山居士 & 
+                性\ \ \ \ \ \ \ \ 别: & 男  \\
+                出生年月: & 2000年1月 & 
+                政治面貌: & 群众 \\
+                意向岗位: & 算法工程师 &
+                籍\ \ \ \ \ \ \ \ 贯: & 湖北武汉
+            \end{tabularx}
+        \end{minipage}
+        \hspace{1em}
+        % 右半边：照片
+        \begin{minipage}{0.14\textwidth}
+            \setlength{\fboxsep}{0pt}
+            % 边框颜色改为华科红
+            \fcolorbox{HUST_Red}{white}{\includegraphics[width=\linewidth]{images/avatar.png}}
+        \end{minipage}
+    \end{figure}
+    \vspace{-1.5em}
+
+    % ============================================================
+    % 教育背景
+    % ============================================================
+    \section{\makebox[\widthof{\faGraduationCap}][c]{\color{HUST_Red}{\faGraduationCap}}\quad 教育背景}
+
+    % 示例内容
+    {\large \textbf{华中科技大学}}，本科 \hfill {湖北，武汉} \\
+    {{启明学院}}，专业：自动化 \hfill {2018年9月-2022年6月} \\
+    {主修课程}：自动控制原理、信号与系统、数字图像处理、C++程序设计\ 等。
+
+    \vspace{0.5em}
+    {\large \textbf{华中科技大学}}，硕士 \hfill {湖北，武汉} \\
+    {{人工智能与自动化学院}}，专业：控制科学与工程 \hfill {2022年9月-至今} \\
+    \textbf{研究方向}：计算机视觉、多模态大模型\ 等。
+
+    % ============================================================
+    % 科研成果
+    % ============================================================
+    \section{\makebox[\widthof{\faBook}][c]{\color{HUST_Red}{\faBook}}\quad 科研成果}
+
+    \textbf{Paper Title Example 1.} \\
+    \textbf{San Zhang (Your Name)}, Si Li, Wu Wang. \hfill 
+    发表于 \textbf{CVPR 2024} (CCF-A类会议)
+
+    \vspace{0.5em}
+    \textbf{Paper Title Example 2.} \\
+    Si Li, \textbf{San Zhang}, Wu Wang. \hfill 
+    发表于 \textbf{IEEE TPAMI} (SCI 一区, IF=20.1)
+
+    % ============================================================
+    % 项目与实习
+    % ============================================================
+    \section{\makebox[\widthof{\faLaptopCode}][c]{\color{HUST_Red}{\faLaptopCode}}\quad 项目与实习经历}
+    
+    \vspace{0.5em}
+    {\large{\textbf{某某大厂核心研发部}}}，算法实习生 \hfill {2023年6月 - 2023年9月}\\
+    \textbf{主要职责}：负责多模态图文检索模型的预训练与微调。\\
+    \textbf{工作产出}：优化了特征提取模块，使下游任务准确率提升了 2.5\%。
+
+
+    % ============================================================
+    % 技能与证书
+    % ============================================================
+    \section{\makebox[\widthof{\faWrench}][c]{\color{HUST_Red}{\faWrench}}\quad 技能与证书}
+    \vspace{0.5em}
+    \begin{itemize}
+        \item \textbf{编程语言}：熟练掌握 Python, C++, MATLAB; 熟悉 Linux 开发环境。
+        \item \textbf{开发框架}：精通 PyTorch, TensorFlow, TensorRT 推理加速。
+        \item \textbf{语言能力}：CET-6 (600+), 托福 (105), 能流畅阅读英文文献。
+        \item \textbf{荣誉奖项}：国家奖学金 (2021), "互联网+"大赛国家银奖 (2022).
+    \end{itemize}
+
+\end{document}
