@@ -56,3 +56,7 @@ A3: 打开 `settings.tex`，找到 `\definecolor{HUST_Red}{RGB}{176, 31, 36}`。
 祝你的简历能助你拿到心仪的 Offer！
 
 **如果本项目对你有帮助，请顺手点个 Star ⭐️ 支持一下！谢谢！**
+
+
+## License
+MIT License
