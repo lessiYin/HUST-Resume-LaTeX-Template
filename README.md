@@ -1,8 +1,7 @@
 # 华中科技大学 (HUST) 中文简历 LaTeX 模板
 这是一个非官方的华中科技大学（HUST）中文简历 LaTeX 模板。基于 [武汉大学简历模板](https://www.overleaf.com/latex/templates/whuwu-han-da-xue-zhong-wen-jian-li-mo-ban/dbkvxrqjmzpd) 二次开发，针对 HUST 进行了配色、校徽和排版逻辑的本地化适配。
+![简历预览](preview.jpg)
 
-> **特点**：无需配置背景图，使用 TikZ 代码直接绘制华科红风格页眉页脚，矢量高清，兼容 Overleaf。
-> 
 ## 使用方法 (Usage)
 
 1. **编译环境**：
