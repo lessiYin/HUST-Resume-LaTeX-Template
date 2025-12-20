@@ -23,7 +23,7 @@ A1: 模板使用了 FontAwesome5 宏包。
     例如 `\faGithub`, `\faEnvelope`, `\faPython` 等。
 
 **Q2: 觉得红色太刺眼，想换回深蓝色？**
-A3: 打开 `settings.tex`，找到 `\definecolor{HUST_Red}{RGB}{176, 31, 36}`。
+A2: 打开 `settings.tex`，找到 `\definecolor{HUST_Red}{RGB}{176, 31, 36}`。
     修改里面的 RGB 数值即可。例如深蓝色是 `{0, 51, 102}`。
 
 ---
