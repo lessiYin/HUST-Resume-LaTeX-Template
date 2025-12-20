@@ -22,12 +22,7 @@ A1: 模板使用了 FontAwesome5 宏包。
     请查阅图标代码表：https://fontawesome.com/v5/search?m=free
     例如 `\faGithub`, `\faEnvelope`, `\faPython` 等。
 
-**Q2: 怎么改栏目名字（比如把“项目经历”改成“实习经历”）？**
-[cite_start]A2: 在 `main.tex` [cite: 3] 中找到 `\section{...}`。
-    例如：`\section{\makebox...{\faLaptopCode}}\quad 项目与实习经历}`
-    修改大括号最后的文字即可。
-
-**Q3: 觉得红色太刺眼，想换回深蓝色？**
+**Q2: 觉得红色太刺眼，想换回深蓝色？**
 A3: 打开 `settings.tex`，找到 `\definecolor{HUST_Red}{RGB}{176, 31, 36}`。
     修改里面的 RGB 数值即可。例如深蓝色是 `{0, 51, 102}`。
 
